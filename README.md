@@ -5,8 +5,8 @@ VitaLuxe is a modern web application for IV therapy services, built with React a
 ## 🚀 Quick Start
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-org/vitaluxe.git
+# Demo
+Url - https://sensational-florentine-98597c.netlify.app/
 
 # Install dependencies
 cd vitaluxe
