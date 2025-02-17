@@ -2,6 +2,16 @@
 
 VitaLuxe is a modern web application for IV therapy services, built with React and TypeScript. This guide will help you understand the project structure and set up the development environment.
 
+# Work Needed 
+- Email notification of bookings admin & Patient both
+- Fix some landi page cards and ui design more impresive
+- More functionaities 
+
+# Your Suggestions
+//Write commit
+
+
+
 ## 🚀 Quick Start
 
 ```bash
@@ -9,7 +19,7 @@ VitaLuxe is a modern web application for IV therapy services, built with React a
 Url - https://sensational-florentine-98597c.netlify.app/
 
 # Install dependencies
-cd vitaluxe
+cd Healthcare
 npm install
 
 # Start development server
@@ -229,7 +239,7 @@ npm run test
 npm run test:coverage
 ```
 
-## 📝 Contributing
+## 📝 Contributing Optional
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -243,4 +253,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🤝 Support
 
-For support, email support@vitaluxe.in or join our Slack channel.
+For support, email zainni.1801@gmail.com or join our Slack channel.
