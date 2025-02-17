@@ -6,55 +6,65 @@ export default {
     extend: {
       colors: {
         border: {
-          DEFAULT: 'rgba(255, 255, 255, 0.1)',
+          DEFAULT: 'rgba(0, 0, 0, 0.1)',
           dark: 'rgba(255, 255, 255, 0.05)'
         },
-        background: 'rgba(236, 242, 255, 0.8)',
-        'background-dark': 'rgba(15, 23, 42, 0.9)',
-        foreground: '#1e293b',
-        'foreground-dark': '#f8fafc',
+        background: {
+          DEFAULT: 'hsl(var(--background))',
+          dark: 'hsl(var(--background))'
+        },
+        foreground: {
+          DEFAULT: 'hsl(var(--foreground))',
+          dark: 'hsl(var(--foreground))'
+        },
         primary: {
-          DEFAULT: '#2563eb',
-          dark: '#1d4ed8'
+          DEFAULT: 'hsl(var(--primary))',
+          dark: 'hsl(var(--primary))'
         },
         secondary: {
-          DEFAULT: '#4f46e5',
-          dark: '#4338ca'
+          DEFAULT: 'hsl(var(--secondary))',
+          dark: 'hsl(var(--secondary))'
         },
         accent: {
-          DEFAULT: '#0ea5e9',
-          dark: '#0284c7'
+          DEFAULT: 'hsl(var(--accent))',
+          dark: 'hsl(var(--accent))'
         },
         success: {
-          DEFAULT: '#22c55e',
-          dark: '#16a34a'
+          DEFAULT: 'hsl(var(--success))',
+          dark: 'hsl(var(--success))'
         },
         warning: {
-          DEFAULT: '#eab308',
-          dark: '#ca8a04'
+          DEFAULT: 'hsl(var(--warning))',
+          dark: 'hsl(var(--warning))'
         },
         error: {
-          DEFAULT: '#ef4444',
-          dark: '#dc2626'
+          DEFAULT: 'hsl(var(--error))',
+          dark: 'hsl(var(--error))'
         },
         surface: {
-          light: 'rgba(255, 255, 255, 0.9)',
-          dark: 'rgba(30, 41, 59, 0.8)'
-        },
-        'surface-hover': {
-          light: 'rgba(255, 255, 255, 1)',
-          dark: 'rgba(30, 41, 59, 0.9)'
+          DEFAULT: 'hsl(var(--surface))',
+          dark: 'hsl(var(--surface))',
+          hover: {
+            DEFAULT: 'hsl(var(--surface) / 0.8)',
+            dark: 'hsl(var(--surface) / 0.8)'
+          }
         }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'glass-light': '0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06)',
-        'glass-dark': '0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12)'
+        'glass': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'glass-dark': '0 8px 12px -2px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2)'
       },
-      backdropBlur: {
-        'glass': '12px'
+      animation: {
+        'fadeIn': 'fadeIn 0.5s ease-out forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        }
       }
     },
   },

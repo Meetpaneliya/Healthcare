@@ -6,16 +6,16 @@
 
 @layer base {
   :root {
-    --background: 220 33% 98%;
-    --foreground: 220 10% 10%;
+    --background: 221 83% 98%;
+    --foreground: 221 83% 10%;
     
     --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 243 75% 59%;
+    --secondary: 221 83% 59%;
     --secondary-foreground: 210 40% 98%;
 
-    --accent: 199 89% 48%;
+    --accent: 221 83% 48%;
     --accent-foreground: 210 40% 98%;
 
     --success: 142 71% 45%;
@@ -28,20 +28,20 @@
     --error-foreground: 210 40% 98%;
 
     --surface: 0 0% 100%;
-    --surface-foreground: 220 10% 10%;
+    --surface-foreground: 221 83% 10%;
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 210 40% 98%;
+    --background: 221 83% 10%;
+    --foreground: 221 83% 98%;
     
     --primary: 221 83% 45%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 243 75% 50%;
+    --secondary: 221 83% 50%;
     --secondary-foreground: 210 40% 98%;
 
-    --accent: 199 89% 40%;
+    --accent: 221 83% 40%;
     --accent-foreground: 210 40% 98%;
 
     --success: 142 71% 35%;
@@ -53,7 +53,7 @@
     --error: 0 84% 50%;
     --error-foreground: 210 40% 98%;
 
-    --surface: 0 0% 15%;
+    --surface: 221 83% 15%;
     --surface-foreground: 210 40% 98%;
   }
 }
@@ -64,12 +64,86 @@
   }
   
   html {
-    @apply antialiased;
+    @apply antialiased scroll-smooth;
   }
   
   body {
-    @apply min-h-screen bg-background dark:bg-background-dark text-foreground dark:text-foreground-dark transition-colors duration-300;
+    @apply min-h-screen bg-background dark:bg-background-dark text-foreground dark:text-foreground-dark transition-all duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
-    background-image: linear-gradient(to bottom right, rgba(219, 234, 254, 0.1), rgba(255, 255, 255, 0.1));
   }
+
+  /* Smooth transitions for all interactive elements */
+  a, button, input, select, textarea {
+    @apply transition-all duration-300;
+  }
+
+  /* Consistent card styling */
+  .card {
+    @apply bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary-dark transition-all duration-300 shadow-glass dark:shadow-glass-dark;
+  }
+
+  /* Consistent button styling */
+  .btn {
+    @apply bg-primary hover:bg-primary/90 dark:bg-primary-dark dark:hover:bg-primary-dark/90 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50 dark:focus:ring-primary-dark/50;
+  }
+
+  /* Consistent input styling */
+  .input {
+    @apply w-full bg-white/80 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg py-3 px-4 text-foreground dark:text-foreground-dark placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-primary dark:focus:border-primary-dark transition-all duration-300;
+  }
+
+  /* Smooth page transitions */
+  .page-transition {
+    @apply animate-fadeIn;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Testimonial slider customization */
+.swiper-pagination-bullet {
+  @apply bg-primary dark:bg-primary-dark opacity-50 transition-all duration-300;
+}
+
+.swiper-pagination-bullet-active {
+  @apply opacity-100;
+}
+
+/* Glass morphism effects */
+.shadow-glass {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.shadow-glass-dark {
+  box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.4),
+              0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 dark:bg-primary-dark/50 rounded-full hover:bg-primary dark:hover:bg-primary-dark transition-all duration-300;
 }
